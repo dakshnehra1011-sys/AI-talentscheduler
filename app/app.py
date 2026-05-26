@@ -1,6 +1,14 @@
 # app.py
-import streamlit as st
+import sys
 import os
+
+# Add sibling folders to path so imports resolve correctly
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(BASE_DIR, "agents"))
+sys.path.insert(0, os.path.join(BASE_DIR, "Ccore"))
+sys.path.insert(0, os.path.join(BASE_DIR, "app"))
+
+import streamlit as st
 import pandas as pd
 import networkx as nx
 import matplotlib.pyplot as plt
